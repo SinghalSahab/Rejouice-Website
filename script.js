@@ -112,3 +112,47 @@ cursorEffect();
 // }
 
 // page2Animation()
+function cursorEffect5() {
+  var page5Content = document.querySelector("#page5");
+  var cursor1 = document.querySelector("#cursor1");
+
+  page5Content.addEventListener("mousemove", function(dets) {
+      gsap.to(cursor1, {
+          x: dets.clientX, // Changed from dets.x to dets.clientX
+          y: dets.clientY, // Changed from dets.y to dets.clientY
+        
+      });
+  });
+
+  page5Content.addEventListener("mouseenter", function() {
+      gsap.to(cursor1, {
+          scale: 1,
+          opacity: 1,
+         
+      });
+  });
+
+  page5Content.addEventListener("mouseleave", function() {
+      gsap.to(cursor1, {
+          scale: 0,
+          opacity: 0,
+          
+      });
+  });
+}
+cursorEffect5();
+
+function swiper()
+{
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay:{
+      delay:9000,
+      disableOnInteraction: true
+    },
+    loop: true,
+    
+  });
+}
+swiper();
